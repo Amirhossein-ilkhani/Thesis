@@ -1,0 +1,49 @@
+{C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.v} {0 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Main
+** Error: (vlog-13069) C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.v(68): near "=": syntax error, unexpected '='.
+
+} {4.0 5.0} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v} {2 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Distributer
+** Warning: C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v(121): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v(121): (vlog-2284) Empty $unit scope found.
+-- Compiling package Distributer_v_unit
+
+Top level modules:
+	Distributer
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Dual_Port_Ram
+
+Top level modules:
+	Dual_Port_Ram
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Matrix_Multiplier
+
+Top level modules:
+	Matrix_Multiplier
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DataPath
+
+Top level modules:
+	DataPath
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Counter
+-- Compiling module fifo
+-- Compiling module PE
+-- Compiling module systolic_array
+
+Top level modules:
+	Counter
+	fifo
+	systolic_array
+
+} {} {}}
