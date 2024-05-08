@@ -1,6 +1,6 @@
 module Matrix_Multiplier#(
-	parameter WIDTH = 32,
-	parameter HEIGHT = 48,
+	parameter WIDTH = 16,
+	parameter HEIGHT = 32,
 	parameter ROW = 4,
 	parameter COL = 4,
     parameter i_index = 0,

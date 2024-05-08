@@ -1,9 +1,9 @@
 module Arbiter #(
   parameter NumRequests = 4
 ) (
-  input [NumRequests-1:0] request,
-  output reg [NumRequests-1:0] grant,
-  output reg [$clog2(NumRequests):0] select
+  input request [0 : NumRequests-1] ,
+  output reg grant [0 : NumRequests-1] ,
+  output reg [$clog2(NumRequests)-1:0] select
 );
   integer i;
   always @(request) begin
