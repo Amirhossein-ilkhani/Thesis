@@ -190,19 +190,19 @@ module Controller #(
     end
 
     always @(posedge clk, posedge rst) begin
-    if(rst) begin
-        ps <= 0;
-        ns <= 0;
-        ps_i <= 0;
-        ns_i <= 0;
-        ps_w <= 0;
-        ns_w <= 0;
+        if(rst) begin
+            ps <= 0;
+            ns <= 0;
+            ps_i <= 0;
+            ns_i <= 0;
+            ps_w <= 0;
+            ns_w <= 0;
+        end
+        else begin
+            ps <= ns;
+            ps_i <= ns_i;
+            ps_w <= ns_w;
+        end
     end
-    else
-        ps <= ns;
-        ps_i <= ns_i;
-        ps_w <= ns_w;
-    end
-
 
 endmodule;

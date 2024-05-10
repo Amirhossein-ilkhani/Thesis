@@ -1,4 +1,4 @@
-module Dual_Port_Ram #(parameter WIDTH=32, parameter HEIGHT=48) 
+module Quad_Port_Ram_w #(parameter WIDTH=32, parameter HEIGHT=48) 
 (
   input [WIDTH-1:0] data_a, data_b, data_c, data_d, //input data
   input [$clog2(HEIGHT)-1:0] addr_a, addr_b, addr_c, addr_d, //Port A and Port B address
@@ -9,7 +9,7 @@ module Dual_Port_Ram #(parameter WIDTH=32, parameter HEIGHT=48)
   
   reg [WIDTH-1:0] ram [0 : HEIGHT-1]; //32*47 bit ram
   initial begin 
-    $readmemh("memoryGBF.mem", ram);
+    $readmemh("memoryGBF_w.mem", ram);
   end
   
   always @ (posedge clk)

@@ -50,7 +50,7 @@ module Counter #(parameter BIT)(clk, rst, en, count, co);
             $error("%m ** Illegal condition **, you used %d DEPTH", DEPTH);
         end
 
-    end // end initial
+    end // end of initial
 
     assign fifo_empty   = ( write_ptr == read_ptr) ? 1'b1 : 1'b0;
     assign fifo_full    = ( write_ptr == (DEPTH-1)) ? 1'b1 : 1'b0;
@@ -181,22 +181,22 @@ module systolic_array(
 	end 
 endmodule
 //----------------------------------------------------------------
-module MUX #(
-    WIDTH = 8,
-    N = 4
-)(
-    input [WIDTH-1:0] in_i [0 : N-1],
-    input [WIDTH-1:0] in_j [0 : N-1],
-    input [WIDTH-1:0] in_k [0 : N-1],
-    input [$clog2(N)-1:0] Sel,
-    output [WIDTH-1:0] o_i,
-    output [WIDTH-1:0] o_j,
-    output [WIDTH-1:0] o_k,
-)
+// module MUX #(
+//     WIDTH = 8,
+//     N = 4
+// )(
+//     input [WIDTH-1:0] in_i [0 : N-1],
+//     input [WIDTH-1:0] in_j [0 : N-1],
+//     input [WIDTH-1:0] in_k [0 : N-1],
+//     input [$clog2(N)-1:0] Sel,
+//     output [WIDTH-1:0] o_i,
+//     output [WIDTH-1:0] o_j,
+//     output [WIDTH-1:0] o_k,
+// )
 
-    assign o_i = in_i[Sel];
-    assign o_j = in_j[Sel];
-    assign o_k = in_k[Sel];
+//     assign o_i = in_i[Sel];
+//     assign o_j = in_j[Sel];
+//     assign o_k = in_k[Sel];
 
-endmodule
+// endmodule
 		      
