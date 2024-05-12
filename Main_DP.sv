@@ -4,8 +4,8 @@ module Main_DP#(
 	parameter COL1 = 3, //K
     parameter ROW2 = 3, //k
 	parameter COL2 = 5, //j
-	parameter HEIGHT_IN = 32,
-	parameter HEIGHT_W = 32,
+	parameter HEIGHT_IN = 96,
+	parameter HEIGHT_W = 240,
     parameter ROW_PE = 4,
 	parameter COL_PE = 4
 	)(
@@ -24,10 +24,10 @@ module Main_DP#(
 	wire [WIDTH-1 : 0] Data_in [0 : 3];
 	wire [WIDTH-1 : 0] Data_w [0 : 3];
 
-	wire req_in [0 : 3][0 : COL2-1][0 : NumOfReq_input-1];
-	wire req_w [0 : 3][0 : ROW1-1][0 : NumOfReq_weight-1];
-	wire grant_in [0 : 3][0 : NumOfReq_input-1];
-	wire grant_w [0 : 3][0 : NumOfReq_weight-1];
+	wire [0 : NumOfReq_input-1] req_in [0 : 3][0 : COL2-1];
+	wire [0 : NumOfReq_weight-1] req_w [0 : 3][0 : ROW1-1];
+	wire [0 : NumOfReq_input-1] grant_in [0 : 3];
+	wire [0 : NumOfReq_weight-1] grant_w [0 : 3];
 
 	wire [$clog2(NumOfReq_input) : 0] selects_in [0 : 3];
 	wire [$clog2(NumOfReq_weight) : 0] selects_w [0 : 3];
@@ -39,9 +39,9 @@ module Main_DP#(
 	wire [7 : 0] i_index_in [0:3][0:NumOfReq_input-1];
 	wire [7 : 0] j_index_in [0:3][0:NumOfReq_input-1];
 	wire [7 : 0] K_index_in [0:3][0:NumOfReq_input-1];
-	wire [7 : 0] i_index_w [0:3][0:NumOfReq_input-1];
-	wire [7 : 0] j_index_w [0:3][0:NumOfReq_input-1];
-	wire [7 : 0] K_index_w [0:3][0:NumOfReq_input-1];
+	wire [7 : 0] i_index_w [0:3][0:NumOfReq_weight-1];
+	wire [7 : 0] j_index_w [0:3][0:NumOfReq_weight-1];
+	wire [7 : 0] K_index_w [0:3][0:NumOfReq_weight-1];
 
 	wire [7:0] o_i_in [0:3];
 	wire [7:0] o_j_in [0:3];
@@ -56,13 +56,15 @@ module Main_DP#(
 	wire en_add_gen_in [0:3];
 	wire en_add_gen_w [0:3];
 
+	// wire en [ROW1][COL2][COL1];
+
 //-----------------------------------------PE---------------------------------------
 	// initialize the resultss
 	genvar z;
 	genvar l;
 	generate
 		for(z = 0; z < ROW1; z = z + 1)begin
-			for(l = 0; z < COL2; l = l + 1)begin
+			for(l = 0; l < COL2; l = l + 1)begin
 				assign result_wire[z][l][0] = 0;
 			end
 		end
@@ -85,7 +87,7 @@ module Main_DP#(
 						) u_i(
 						.clk(clk),
 						.rst(rst),
-						.en(1),
+						.en(!rst),
 						.grant_in(grant_in[((i*COL1)+k)%4][((i*COL1)+k)/4]),
 						.grant_w(grant_w[((k*COL2)+j)%4][((k*COL2)+j)/4]),
 						.Data_in_a(Data_in[((i*COL1)+k)%4]),
@@ -112,9 +114,12 @@ module Main_DP#(
 			end
 		end
 	endgenerate
+
+
+
 	
 //-----------------------------------------GBF---------------------------------------
-	Quad_Port_Ram #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_IN)) GBF_in(
+	Quad_Port_Ram_in #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_IN)) GBF_in(
         .clk(clk),
         .addr_a(Addr_GBF_in[0]),
         .addr_b(Addr_GBF_in[1]),
@@ -126,7 +131,7 @@ module Main_DP#(
         .q_d(Data_in[3])
     );
 
-	Quad_Port_Ram #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_W)) GBF_w(
+	Quad_Port_Ram_w #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_W)) GBF_w(
         .clk(clk),
         .addr_a(Addr_GBF_w[0]),
         .addr_b(Addr_GBF_w[1]),

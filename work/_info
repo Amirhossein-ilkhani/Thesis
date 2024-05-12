@@ -11,32 +11,32 @@ cModel Technology
 dC:/Users/Amir/Desktop/Systolic Array
 vArbiter
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1715363671
+!s110 1715419763
 !i10b 1
 !s100 934E9ZMlhA<@2R>CNT`kB2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I69lK1fzbQ`7aAI[KY;Ef72
+I2ilUnd=D@04TfPn_NKIAN0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z3 dC:/Users/Amir/Desktop/Systolic Array - MLP
-w1715357931
-8C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter copy.sv
-FC:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter copy.sv
-!i122 55
+w1715368288
+8C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv
+FC:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv
+!i122 82
 L0 1 24
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1715363670.000000
-!s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter copy.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter copy.sv|
+!s108 1715419761.000000
+!s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv|
 !i113 1
 Z5 o-work work -sv
 Z6 tCvgOpt 0
 n@arbiter
 vController
-Z7 !s110 1715362618
+Z7 !s110 1715367658
 !i10b 1
 !s100 Wj8SSVIHjkbYGjaXnoLCN2
 R1
@@ -46,13 +46,13 @@ R3
 Z8 w1715353288
 Z9 8C:/Users/Amir/Desktop/Systolic Array - MLP/Controller.v
 Z10 FC:/Users/Amir/Desktop/Systolic Array - MLP/Controller.v
-!i122 41
+!i122 59
 L0 1 208
 R4
 r1
 !s85 0
 31
-Z11 !s108 1715362618.000000
+Z11 !s108 1715367658.000000
 Z12 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Controller.v|
 Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Controller.v|
 !i113 1
@@ -74,7 +74,7 @@ R3
 R8
 R9
 R10
-!i122 41
+!i122 59
 L0 208 0
 R4
 31
@@ -86,31 +86,31 @@ R14
 R6
 n@controller_v_unit
 vCounter
-Z15 !s110 1715362617
+R7
 !i10b 1
 !s100 K9GD@;ZKQ@jW]dfcNDXY93
 R1
 I:4nY[<;QBiZQhJVj0OIm>1
 R2
 R3
-Z16 w1715362547
-Z17 8C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v
-Z18 FC:/Users/Amir/Desktop/Systolic Array - MLP/Component.v
-!i122 40
+Z15 w1715362547
+Z16 8C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v
+Z17 FC:/Users/Amir/Desktop/Systolic Array - MLP/Component.v
+!i122 58
 L0 1 12
 R4
 r1
 !s85 0
 31
-Z19 !s108 1715362616.000000
-Z20 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v|
-Z21 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v|
+Z18 !s108 1715367657.000000
+Z19 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v|
 !i113 1
 R14
 R6
 n@counter
 vDataPath
-Z22 !s110 1715362619
+R7
 !i10b 1
 !s100 U`L6oGAW=BdQCIh?O0cR00
 R1
@@ -120,8 +120,8 @@ R3
 w1709553268
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v
-!i122 42
-Z23 L0 1 55
+!i122 60
+Z21 L0 1 55
 R4
 r1
 !s85 0
@@ -134,7 +134,7 @@ R14
 R6
 n@data@path
 vdatapath_tb
-Z24 !s110 1715362620
+Z22 !s110 1715367659
 !i10b 1
 !s100 iY:=__=UK7gdfD>GZ6G3`1
 R1
@@ -144,45 +144,45 @@ R3
 w1708115088
 8C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v
-!i122 48
+!i122 68
 L0 1 175
 R4
 r1
 !s85 0
 31
-Z25 !s108 1715362620.000000
+Z23 !s108 1715367659.000000
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v|
 !i113 1
 R14
 R6
 vDistributer
-Z26 !s110 1709279729
+Z24 !s110 1709279729
 !i10b 1
 !s100 nHH^9>5[VNc8Dj;Jem8>:2
 R1
 ID4<kL@g<:@j_A8Joc3?851
 R2
 R3
-Z27 w1708350918
-Z28 8C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v
-Z29 FC:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v
+Z25 w1708350918
+Z26 8C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v
+Z27 FC:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v
 !i122 2
 L0 1 121
 R4
 r1
 !s85 0
 31
-Z30 !s108 1709279729.000000
-Z31 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v|
-Z32 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v|
+Z28 !s108 1709279729.000000
+Z29 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v|
+Z30 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Distributer.v|
 !i113 1
 R14
 R6
 n@distributer
 XDistributer_v_unit
 R0
-R26
+R24
 VhP>j2BYSf6LlmjY91ze2e0
 r1
 !s85 0
@@ -192,22 +192,22 @@ IhP>j2BYSf6LlmjY91ze2e0
 !i103 1
 S1
 R3
+R25
+R26
 R27
-R28
-R29
 !i122 2
 L0 121 0
 R4
 31
+R28
+R29
 R30
-R31
-R32
 !i113 1
 R14
 R6
 n@distributer_v_unit
 vDual_Port_Ram
-R22
+R7
 !i10b 1
 !s100 [`2>9J@bS_i2Vff`>3Hg<3
 R1
@@ -217,13 +217,13 @@ R3
 w1715086860
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v
-!i122 43
+!i122 61
 L0 1 30
 R4
 r1
 !s85 0
 31
-Z33 !s108 1715362619.000000
+R11
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v|
 !i113 1
@@ -231,30 +231,30 @@ R14
 R6
 n@dual_@port_@ram
 vfifo
-R15
+R7
 !i10b 1
 !s100 V_J`M2e:I4of[nfd337c41
 R1
 Id?dPSzk9S_hd3QXmG0JdZ1
 R2
 R3
+R15
 R16
 R17
-R18
-!i122 40
+!i122 58
 L0 16 77
 R4
 r1
 !s85 0
 31
+R18
 R19
 R20
-R21
 !i113 1
 R14
 R6
 vfifo_tb
-R24
+R22
 !i10b 1
 !s100 @@e@fC4Wo=BlHORP8;Aah3
 R1
@@ -264,36 +264,36 @@ R3
 w1708113136
 8C:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v
-!i122 49
+!i122 69
 L0 1 63
 R4
 r1
 !s85 0
 31
-R25
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v|
 !i113 1
 R14
 R6
 vGenerator_Addr_in
-Z34 !s110 1715362824
+!s110 1715521537
 !i10b 1
-!s100 ]Wg1h3d1OBKN`KnKEzJ7c2
+!s100 6aCDjShIdzmP[FQBC^QRZ2
 R1
-IQZZb>k3U0Aahb:NoNQ?zG0
+I:o>;h5V;633]kTk2d2?A81
 R2
 R3
-w1715362816
+w1715521530
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v
-!i122 52
+!i122 89
 L0 1 41
 R4
 r1
 !s85 0
 31
-Z35 !s108 1715362824.000000
+!s108 1715521537.000000
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v|
 !i113 1
@@ -301,23 +301,23 @@ R14
 R6
 n@generator_@addr_in
 vGenerator_Addr_w
-R34
+!s110 1715522006
 !i10b 1
-!s100 Ci@gkzJB_bAj1:[LDFdEG2
+!s100 [BfBSdkVo10KDDIgcm`gJ1
 R1
-I?^0QPzioRdhW@l_[eM0>X0
+IN2DR3SBCI;eCjV[CW4<X80
 R2
 R3
-w1715362804
+w1715521980
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v
-!i122 53
+!i122 91
 L0 1 40
 R4
 r1
 !s85 0
 31
-R35
+!s108 1715522006.000000
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v|
 !i113 1
@@ -325,7 +325,7 @@ R14
 R6
 n@generator_@addr_w
 vGMM_tb
-R24
+Z31 !s110 1715367660
 !i10b 1
 !s100 MLCke_f4=2LLTh3YSeokQ1
 R1
@@ -335,13 +335,13 @@ R3
 w1714738045
 8C:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v
-!i122 50
-R23
+!i122 70
+R21
 R4
 r1
 !s85 0
 31
-R25
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v|
 !i113 1
@@ -374,30 +374,54 @@ R6
 n@main
 vMain_DP
 R0
-!s110 1715363566
+!s110 1715524346
 !i10b 1
-!s100 >a6]gSn<i[c_kHeOd:mT^2
+!s100 VHk4M?RS>:N330GPKEBWR3
 R1
-Ii3U[`eaj4674JzPk=k`c@0
+ITlLCJo<k86^zf92EJQMSF1
 R2
 S1
 R3
-w1715363332
+w1715524341
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv
-!i122 54
-L0 1 357
+!i122 92
+L0 1 362
 R4
 r1
 !s85 0
 31
-!s108 1715363566.000000
+!s108 1715524346.000000
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv|
 !i113 1
 R5
 R6
 n@main_@d@p
+vMain_tb
+!s110 1715367661
+!i10b 1
+!s100 Y;Za7eGV4cHY7>kGMi8ln2
+R1
+I4CJZH7BEH_BGWK8dY;XH82
+R2
+R3
+w1715366314
+8C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v
+FC:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v
+!i122 73
+L0 1 39
+R4
+r1
+!s85 0
+31
+!s108 1715367661.000000
+!s107 C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v|
+!i113 1
+R14
+R6
+n@main_tb
 vMatrix_Multiplier
 R22
 !i10b 1
@@ -409,13 +433,13 @@ R3
 w1714813287
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v
-!i122 44
+!i122 64
 L0 1 86
 R4
 r1
 !s85 0
 31
-R33
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v|
 !i113 1
@@ -424,7 +448,7 @@ R6
 n@matrix_@multiplier
 vMUX
 R0
-!s110 1715362681
+R31
 !i10b 1
 !s100 bK074kmZXlXHb@fJz:aJG0
 R1
@@ -435,13 +459,13 @@ R3
 w1715362677
 8C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv
 FC:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv
-!i122 51
+!i122 71
 L0 1 18
 R4
 r1
 !s85 0
 31
-!s108 1715362681.000000
+!s108 1715367660.000000
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv|
 !i113 1
@@ -449,25 +473,25 @@ R5
 R6
 n@m@u@x
 vPE
-R15
+R7
 !i10b 1
 !s100 _B5V`SVnAMGBT]J`iY6hG2
 R1
 IET01ihNNCa2UzL;5mKBWX2
 R2
 R3
+R15
 R16
 R17
-R18
-!i122 40
+!i122 58
 L0 94 21
 R4
 r1
 !s85 0
 31
+R18
 R19
 R20
-R21
 !i113 1
 R14
 R6
@@ -483,13 +507,13 @@ R3
 w1715357552
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v
-!i122 45
-Z36 L0 1 44
+!i122 65
+Z32 L0 1 44
 R4
 r1
 !s85 0
 31
-R33
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v|
 !i113 1
@@ -497,7 +521,7 @@ R14
 R6
 n@quad_@port_@ram_in
 vQuad_Port_Ram_w
-R24
+R22
 !i10b 1
 !s100 4_j8k8GjaTQ:l]HPKX9DA3
 R1
@@ -507,13 +531,13 @@ R3
 w1715357576
 8C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v
-!i122 46
-R36
+!i122 66
+R32
 R4
 r1
 !s85 0
 31
-R33
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v|
 !i113 1
@@ -521,7 +545,7 @@ R14
 R6
 n@quad_@port_@ram_w
 vsys_array_tb
-R24
+R22
 !i10b 1
 !s100 LRV^aU31PGgS7mPD6g@4^0
 R1
@@ -531,38 +555,38 @@ R3
 w1708088098
 8C:/Users/Amir/Desktop/Systolic Array - MLP/TB.v
 FC:/Users/Amir/Desktop/Systolic Array - MLP/TB.v
-!i122 47
+!i122 67
 L0 1 100
 R4
 r1
 !s85 0
 31
-R25
+R23
 !s107 C:/Users/Amir/Desktop/Systolic Array - MLP/TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Amir/Desktop/Systolic Array - MLP/TB.v|
 !i113 1
 R14
 R6
 vsystolic_array
-R15
+R7
 !i10b 1
 !s100 BN0AAzg]>IRlj_h8k5`3Z0
 R1
 IJRMOZ=FE?b]khYC;_k9X53
 R2
 R3
+R15
 R16
 R17
-R18
-!i122 40
+!i122 58
 L0 116 67
 R4
 r1
 !s85 0
 31
+R18
 R19
 R20
-R21
 !i113 1
 R14
 R6
