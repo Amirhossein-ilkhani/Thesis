@@ -35,6 +35,6 @@ module Generator_Addr_w #(
 			ps <= ns;
 	end
 	
-	assign Addr = (END_ROW*4*i*k)+(4*j)+(END_ROW*cnt_0)+cnt_1;
+	assign Addr = (END_ROW*4*k)+(4*j)+(END_ROW*cnt_0)+cnt_1;
 	
 endmodule

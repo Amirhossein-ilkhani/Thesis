@@ -267,7 +267,7 @@ module Main_DP#(
 		.o_j(o_j_w[0]),
 		.o_k(o_k_w[0])
 	);
-	Generator_Addr_w #(.END_ROW(ROW_PE*COL1), .HEIGHT(HEIGHT_W)) generator_w_0(
+	Generator_Addr_w #(.END_ROW(ROW_PE*COL2), .HEIGHT(HEIGHT_W)) generator_w_0(
 		.clk(clk),
 		.rst(rst),
 		.en(en_add_gen_w[0]),
@@ -293,7 +293,7 @@ module Main_DP#(
 		.o_j(o_j_w[1]),
 		.o_k(o_k_w[1])
 	);
-	Generator_Addr_w #(.END_ROW(ROW_PE*COL1), .HEIGHT(HEIGHT_W)) generator_w_1(
+	Generator_Addr_w #(.END_ROW(ROW_PE*COL2), .HEIGHT(HEIGHT_W)) generator_w_1(
 		.clk(clk),
 		.rst(rst),
 		.en(en_add_gen_w[1]),
@@ -318,7 +318,7 @@ module Main_DP#(
 		.o_j(o_j_w[2]),
 		.o_k(o_k_w[2])
 	);
-	Generator_Addr_w #(.END_ROW(ROW_PE*COL1), .HEIGHT(HEIGHT_W)) generator_w_2(
+	Generator_Addr_w #(.END_ROW(ROW_PE*COL2), .HEIGHT(HEIGHT_W)) generator_w_2(
 		.clk(clk),
 		.rst(rst),
 		.en(en_add_gen_w[2]),
@@ -344,7 +344,7 @@ module Main_DP#(
 		.o_j(o_j_w[3]),
 		.o_k(o_k_w[3])
 	);
-	Generator_Addr_w #(.END_ROW(ROW_PE*COL1), .HEIGHT(HEIGHT_W)) generator_w_3(
+	Generator_Addr_w #(.END_ROW(ROW_PE*COL2), .HEIGHT(HEIGHT_W)) generator_w_3(
 		.clk(clk),
 		.rst(rst),
 		.en(en_add_gen_w[3]),

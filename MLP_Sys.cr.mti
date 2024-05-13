@@ -71,6 +71,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Main_tb
 
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Main_DP
+
+Top level modules:
+	Main_DP
+
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Component.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Counter
@@ -90,19 +97,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Matrix_Multiplier
 
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module datapath_tb
-
-Top level modules:
-	datapath_tb
-
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Arbiter
 
 Top level modules:
 	Arbiter
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module datapath_tb
+
+Top level modules:
+	datapath_tb
 
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
