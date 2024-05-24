@@ -70,24 +70,26 @@ module Counter #(parameter BIT)(clk, rst, en, count, co);
         else begin
             if ( write ) begin
                 memory[write_ptr] <= data_in;
+                write_ptr <= write_ptr + 1;
             end
 
             if ( read ) begin
                 data_out <= memory[read_ptr];
+                read_ptr <= read_ptr + 1;
                 memory[read_ptr] <= 0;
             end
         end
     end
 
-    always @ ( posedge clk ) begin
-        if ( write ) begin
-            write_ptr <= write_ptr + 1;
-        end
+    // always @ ( posedge clk ) begin
+    //     if ( write ) begin
+    //         write_ptr <= write_ptr + 1;
+    //     end
 
-        if ( read) begin
-            read_ptr <= read_ptr + 1;
-        end
-    end
+    //     if ( read) begin
+    //         read_ptr <= read_ptr + 1;
+    //     end
+    // end
 
 endmodule
 //----------------------------------------------------------------
@@ -171,7 +173,7 @@ module systolic_array(
 		else if (cs == 1) begin
 			if(count == 9) begin
 				done <= 1;
-				count <= 0;
+				// count <= 0;
 			end
 			else begin
 				done <= 0;

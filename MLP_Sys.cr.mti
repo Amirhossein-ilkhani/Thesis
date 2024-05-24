@@ -1,4 +1,11 @@
-{C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v}
+{C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Quad_Port_Ram
+
+Top level modules:
+	Quad_Port_Ram
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Dual_Port_Ram.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Dual_Port_Ram
 
@@ -15,33 +22,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Controller
 
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_in.v}
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Quad_Port_Ram_in
+-- Compiling module Main_tb
 
 Top level modules:
-	Quad_Port_Ram_in
-
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Quad_Port_Ram_w.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Quad_Port_Ram_w
-
-Top level modules:
-	Quad_Port_Ram_w
-
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_GMM.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module GMM_tb
-
-Top level modules:
-	GMM_tb
-
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module sys_array_tb
-
-Top level modules:
-	sys_array_tb
+	Main_tb
 
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_in.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -50,26 +36,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Generator_Addr_in
 
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.v}
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Datapath.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DataPath
 
 Top level modules:
 	DataPath
-
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_fifo.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module fifo_tb
-
-Top level modules:
-	fifo_tb
-
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_Main.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Main_tb
-
-Top level modules:
-	Main_tb
 
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Main_DP.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -90,13 +62,6 @@ Top level modules:
 	fifo
 	systolic_array
 
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Matrix_Multiplier
-
-Top level modules:
-	Matrix_Multiplier
-
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Arbiter.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Arbiter
@@ -104,19 +69,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Arbiter
 
-} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/TB_datapath.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module datapath_tb
-
-Top level modules:
-	datapath_tb
-
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/MUX.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MUX
 
 Top level modules:
 	MUX
+
+} {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Matrix_Multiplier.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Matrix_Multiplier
+
+Top level modules:
+	Matrix_Multiplier
 
 } {} {}} {C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v} {1 {vlog -work work -stats=none {C:/Users/Amir/Desktop/Systolic Array - MLP/Generator_Addr_w.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

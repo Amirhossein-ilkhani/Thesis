@@ -16,8 +16,8 @@ module Matrix_Multiplier#(
     // input w_a,w_b,
     // input [$clog2(HEIGHT): 0] Addr_in_a,Addr_in_b,
 
-    input [ROW*COL*WIDTH-1 : 0] result_in,
-    output [ROW*COL*WIDTH-1 : 0] result_out,
+    input  [0 : ROW*COL-1] [WIDTH-1 : 0] result_in,
+    output [0 : ROW*COL-1] [WIDTH-1 : 0] result_out,
     output req_in, req_w,
     output Done,
     output [7 : 0] i, j, k

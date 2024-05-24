@@ -7,15 +7,15 @@ module DataPath#(
 	input cs,
 	input [ROW-1 : 0] read, write,
 	input [WIDTH-1 : 0] data_in_w, data_in_i,
-	input [ROW*COL*WIDTH-1 : 0] result_in,
-	output [ROW*COL*WIDTH-1 : 0] result_out,
+	input [0 : ROW*COL-1][WIDTH-1 : 0] result_in,
+	output [0 : ROW*COL-1][WIDTH-1 : 0] result_out,
 	output done
 	);
 
 	wire [WIDTH-1 : 0] inp_west [0 : COL-1];
 	wire [WIDTH-1 : 0] inp_north [0 : ROW-1];
-	wire [2*WIDTH-1 : 0] result [0 : ROW*COL-1];
-
+	wire [0 : ROW*COL-1][2*WIDTH-1 : 0] result;
+	
 	genvar i;
 	generate 
 		for (i = 0; i < ROW; i=i+1) begin
@@ -49,7 +49,7 @@ module DataPath#(
 	genvar j;
 	generate
 		for(j = 0; j < ROW*COL; j = j+1)begin
-			assign result_out[(j+1)*WIDTH-1 : j*WIDTH] = result_in[(j+1)*WIDTH-1 : j*WIDTH] + result[j];
+			assign result_out[j] = result_in[j] + result[j];
 		end
 	endgenerate
 endmodule

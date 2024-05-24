@@ -6,23 +6,42 @@ module Main_DP#(
 	parameter COL2 = 5, //j
 	parameter HEIGHT_IN = 96,
 	parameter HEIGHT_W = 240,
+	parameter HEIGHT_O = 160,
     parameter ROW_PE = 4,
 	parameter COL_PE = 4
 	)(
 	input clk,rst,
-	input Start, 
+	input en [0:ROW1-1][0:COL2-1][0:ROW2-1],
+	output [WIDTH-1 : 0] Data_o [0 : 3],
+	output [$clog2(HEIGHT_IN)-1:0] Addr_GBF_in [0:3],
+	output [$clog2(HEIGHT_W)-1:0] Addr_GBF_w [0:3],
+	output [$clog2(HEIGHT_O)-1:0] Addr_GBF_o [0:3],
+	input [WIDTH-1 : 0] Data_in [0 : 3],
+	input [WIDTH-1 : 0] Data_w [0 : 3],
+	output we_o [0: 3],
 	output done
 	);
+
 //-----------------------------------------Wires and Registers---------------------------------------
 	parameter NumOfReq_input = ((ROW1 * COL1)/4) +1;
 	parameter NumOfReq_weight = ((COL1 * COL2)/4) +1;
 
-	reg start;
+	reg [0 : ROW1-1][0 : COL2-1][0 : COL1-1] Done;
     reg w_a [0 : ROW1-1][0 : COL2-1][0 : COL1-1];
     reg w_b [0 : COL2-1][0 : COL1-1];
-	wire [ROW_PE*COL_PE*WIDTH-1 : 0] result_wire [0 : ROW1-1][0 : COL2-1][0 : COL1];
-	wire [WIDTH-1 : 0] Data_in [0 : 3];
-	wire [WIDTH-1 : 0] Data_w [0 : 3];
+	wire [0 : ROW_PE*COL_PE-1][WIDTH-1 : 0] result_wire [0 : ROW1-1][0 : COL2-1][0 : COL1];
+	wire [0 : ROW_PE*COL_PE-1][WIDTH-1 : 0] result_wire_out [0 : ROW1-1][0 : COL2-1];
+	wire start_o;
+
+	// wire [$clog2(HEIGHT_IN)-1:0] Addr_GBF_in [0:3];
+	// wire [$clog2(HEIGHT_W)-1:0] Addr_GBF_w [0:3];
+	// wire [$clog2(HEIGHT_O)-1:0] Addr_GBF_o [0:3];
+
+	// wire [WIDTH-1 : 0] Data_in [0 : 3];
+	// wire [WIDTH-1 : 0] Data_w [0 : 3];
+	// wire [WIDTH-1 : 0] Data_o [0 : 3];
+
+	// wire we_o [0: 3];
 
 	wire [0 : NumOfReq_input-1] req_in [0 : 3][0 : COL2-1];
 	wire [0 : NumOfReq_weight-1] req_w [0 : 3][0 : ROW1-1];
@@ -32,9 +51,9 @@ module Main_DP#(
 	wire [$clog2(NumOfReq_input) : 0] selects_in [0 : 3];
 	wire [$clog2(NumOfReq_weight) : 0] selects_w [0 : 3];
 
-	wire [7 : 0] i_index [ROW1][COL2][COL1];//[i][j][k]
-	wire [7 : 0] j_index [ROW1][COL2][COL1];//[i][j][k]
-	wire [7 : 0] k_index [ROW1][COL2][COL1];//[i][j][k]
+	wire [7 : 0] i_index [0:ROW1-1][0:COL2-1][0:COL1-1];//[i][j][k]
+	wire [7 : 0] j_index [0:ROW1-1][0:COL2-1][0:COL1-1];//[i][j][k]
+	wire [7 : 0] k_index [0:ROW1-1][0:COL2-1][0:COL1-1];//[i][j][k]
 	
 	wire [7 : 0] i_index_in [0:3][0:NumOfReq_input-1];
 	wire [7 : 0] j_index_in [0:3][0:NumOfReq_input-1];
@@ -49,9 +68,6 @@ module Main_DP#(
 	wire [7:0] o_i_w [0:3];
 	wire [7:0] o_j_w [0:3];
 	wire [7:0] o_k_w [0:3];
-
-	wire [$clog2(HEIGHT_IN)-1:0] Addr_GBF_in [0:3];
-	wire [$clog2(HEIGHT_W)-1:0] Addr_GBF_w [0:3];
 
 	wire en_add_gen_in [0:3];
 	wire en_add_gen_w [0:3];
@@ -87,7 +103,7 @@ module Main_DP#(
 						) u_i(
 						.clk(clk),
 						.rst(rst),
-						.en(!rst),
+						.en(en[i][j][k]),
 						.grant_in(grant_in[((i*COL1)+k)%4][((i*COL1)+k)/4]),
 						.grant_w(grant_w[((k*COL2)+j)%4][((k*COL2)+j)/4]),
 						.Data_in_a(Data_in[((i*COL1)+k)%4]),
@@ -99,8 +115,7 @@ module Main_DP#(
 						.i(i_index[i][j][k]),
 						.j(j_index[i][j][k]),  
 						.k(k_index[i][j][k]),
-						
-						.Done()
+						.Done(Done[i][j][k])
 					);
 
 					assign i_index_in[((i*COL1)+k)%4][((i*COL1)+k)/4] = i_index[i][j][k];
@@ -116,34 +131,18 @@ module Main_DP#(
 	endgenerate
 
 
-
-	
-//-----------------------------------------GBF---------------------------------------
-	Quad_Port_Ram_in #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_IN)) GBF_in(
-        .clk(clk),
-        .addr_a(Addr_GBF_in[0]),
-        .addr_b(Addr_GBF_in[1]),
-        .addr_c(Addr_GBF_in[2]),
-        .addr_d(Addr_GBF_in[3]),
-        .q_a(Data_in[0]),
-        .q_b(Data_in[1]),
-        .q_c(Data_in[2]),
-        .q_d(Data_in[3])
-    );
-
-	Quad_Port_Ram_w #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_W)) GBF_w(
-        .clk(clk),
-        .addr_a(Addr_GBF_w[0]),
-        .addr_b(Addr_GBF_w[1]),
-        .addr_c(Addr_GBF_w[2]),
-        .addr_d(Addr_GBF_w[3]),
-        .q_a(Data_w[0]),
-        .q_b(Data_w[1]),
-        .q_c(Data_w[2]),
-        .q_d(Data_w[3])
-    );
 //-----------------------------------------BUS_in---------------------------------------
-
+	// Quad_Port_Ram #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_IN)) GBF_in(
+    //     .clk(clk),
+    //     .addr_a(Addr_GBF_in[0]),
+    //     .addr_b(Addr_GBF_in[1]),
+    //     .addr_c(Addr_GBF_in[2]),
+    //     .addr_d(Addr_GBF_in[3]),
+    //     .q_a(Data_in[0]),
+    //     .q_b(Data_in[1]),
+    //     .q_c(Data_in[2]),
+    //     .q_d(Data_in[3])
+    // );
 	// --------------------section 0--------------------------
 	Arbiter #(.NumRequests(NumOfReq_input)) Arbiter_in_0 (
 		.request(req_in[0][0]),
@@ -250,7 +249,17 @@ module Main_DP#(
 
 
 //-----------------------------------------BUS_W---------------------------------------
-
+	// Quad_Port_Ram #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_W)) GBF_w(
+    //     .clk(clk),
+    //     .addr_a(Addr_GBF_w[0]),
+    //     .addr_b(Addr_GBF_w[1]),
+    //     .addr_c(Addr_GBF_w[2]),
+    //     .addr_d(Addr_GBF_w[3]),
+    //     .q_a(Data_w[0]),
+    //     .q_b(Data_w[1]),
+    //     .q_c(Data_w[2]),
+    //     .q_d(Data_w[3])
+    // );
 	// --------------------section_w 0--------------------------
 	Arbiter #(.NumRequests(NumOfReq_weight)) Arbiter_w_0 (
 		.request(req_w[0][0]),
@@ -354,7 +363,60 @@ module Main_DP#(
 		.Addr(Addr_GBF_w[3])
 	);
 
-//-----------------------------------------Scheduler---------------------------------
+//-----------------------------------------Write_Output---------------------------------
+	// Quad_Port_Ram #(.WIDTH(WIDTH), .HEIGHT(HEIGHT_O)) GBF_O(
+    //     .clk(clk),
+    //     .addr_a(Addr_GBF_o[0]),
+    //     .addr_b(Addr_GBF_o[1]),
+    //     .addr_c(Addr_GBF_o[2]),
+    //     .addr_d(Addr_GBF_o[3]),
+    //     .data_a(Data_o[0]),
+    //     .data_b(Data_o[1]),
+    //     .data_c(Data_o[2]),
+    //     .data_d(Data_o[3]),
+	// 	.we_a(we_o[0]),
+	// 	.we_b(we_o[1]),
+	// 	.we_c(we_o[2]),
+	// 	.we_d(we_o[3])
+    // );
+
+	genvar i1, j1;
+    generate
+        for (i1 = 0; i1 < ROW1; i1 = i1 + 1) begin
+            for (j1 = 0; j1 < COL2; j1 = j1 + 1) begin
+				assign result_wire_out[i1][j1] = result_wire[i1][j1][COL1];
+            end
+        end
+    endgenerate
+	
+	write_to_ram #(
+		.ROW(ROW_PE),
+		.COL(COL_PE),
+		.WIDTH(WIDTH),
+		.ROW1(ROW1),
+		.COL2(COL2),
+		.ADDR_WIDTH($clog2(HEIGHT_O))
+	) out_writer(
+        .clk(clk),
+		.rst(rst),
+        .start(start_o),
+        .result_wire(result_wire_out),
+        .data_a(Data_o[0]),
+        .data_b(Data_o[1]),
+        .data_c(Data_o[2]),
+        .data_d(Data_o[3]),
+        .addr_a(Addr_GBF_o[0]),
+        .addr_b(Addr_GBF_o[1]),
+        .addr_c(Addr_GBF_o[2]),
+        .addr_d(Addr_GBF_o[3]),
+        .we_a(we_o[0]),
+        .we_b(we_o[1]),
+        .we_c(we_o[2]),
+        .we_d(we_o[3]),
+		.done(done)
+    );
+
+	assign start_o = &(Done);
 
 
 
